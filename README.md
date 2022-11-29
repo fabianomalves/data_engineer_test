@@ -11,9 +11,9 @@ Passando o token recebido por email para o endpoint ```https://my.api.mockaroo.c
 Para ajudar o time de produto em suas análises, precisamos que os dados estejam formatados e com seu data type correto
  
 **Regras de negócio**
-* Precisamos saber o estado que a pessoa acessou nossos serviços, com as coordenadas dos usuários (`address.geo_latitude` e `address.geo_longitude`) devemos criar uma coluna de estado chamada `address_state`;
+* Precisamos saber o estado que a pessoa acessou nossos serviços, com as coordenadas `address.geo_latitude` e `address.geo_longitude` dos usuários devemos criar uma coluna de estado chamada `address_state`, processo denominado [reverse geocode](https://en.wikipedia.org/wiki/Reverse_geocoding)
 * a API nos devolve o CPF do usuário, mas temos um problema: o CPF está **criptografado**! Utilizando a chave de criptografia passada por email, abra esse CPF para que possamos analisar o próximo requisito;
-* Você sabia que o nono dígito do CPF corresponde a Região Fiscal emissora do CPF? [veja sobre](http://clubes.obmep.org.br/blog/a-matematica-nos-documentos-cpf/). Sabendo disso, nosso time precisa saber qual a Região Fiscal que esse CPF foi registrado:
+* Você sabia que o [nono dígito do CPF corresponde a Região Fiscal emissora do CPF](http://clubes.obmep.org.br/blog/a-matematica-nos-documentos-cpf/)? Sabendo disso, nosso time precisa saber qual a Região Fiscal que esse CPF foi registrado:
 
 
 | Nono dígito | UF |
