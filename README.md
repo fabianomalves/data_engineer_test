@@ -4,8 +4,45 @@ Nosso time de negócio precisa analisar dados de alguns usuários para tomada de
 O desafio é capturar os dados que recebemos de alguns usuários e conseguir responder perguntas que definirão os próximos passos da empresa!
  
 ## Tarefas
-### 1. Consumir dados de usuário da API :key:
-Substituindo userkey pelo token recebido por email, o endpoint ```https://my.api.mockaroo.com/users_bg.json?key=userkey``` nos retorna dados de usuários em formato json
+**Documentações da API**
+[Swagger UI](https://ua8vha.deta.dev/docs)
+[ReDoc](https://ua8vha.deta.dev/redoc)
+### 1. Cadastrar usuário para obter token de acesso da API :key:
+
+**Request Address**: `https://ua8vha.deta.dev/user/`
+**Request Method** `POST`
+**Request Parameters JSON**:
+```
+{
+  "full_name": "string",
+  "email": "user@example.com"
+}
+```
+**Curl**
+```
+curl -X 'POST' \
+  'https://ua8vha.deta.dev/user/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "full_name": "Joao Henrique",
+  "email": "joao@begrowth.com.br"
+}'
+```
+------
+**Server response**
+
+Code: **201**
+Response Body: 
+``` 
+{
+  "user": "joao@begrowth.com.br",
+  "API Token": "{your_access_token}"
+}
+```
+
+### 2. Consumir dados de usuário da API :key:
+Substituindo `access_token` pelo token obtido na etapa anterior, podemos chamar o endpoint `https://ua8vha.deta.dev/token=access_token` que nos retorna dados de usuários em formato **JSON**
 
 Exemplo:
 **Saída**
@@ -69,3 +106,5 @@ Leia sobre [Nomes de coluna BigQuery](https://cloud.google.com/bigquery/docs/sch
 * Sinta-se à vontade para usar qualquer framework, bibliotecas e ferramentas que se sentir à vontade a única restrição é a linguagem de programação que deve ser **Python**
 
 ***Todos os dados de usuário são ficticios gerados para efeito de teste/estudo por plataformas como mockaroo e 4Devs**
+
+**A má utilização dos dados aqui gerados é de total responsabilidade do usuário. Os dados são gerados de forma aleatória, respeitando as regras de criação de cada documento.**
