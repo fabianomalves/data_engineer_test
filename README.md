@@ -10,7 +10,9 @@ O desafio é capturar os dados que recebemos de alguns usuários e conseguir res
 ### 1. Cadastrar usuário para obter token de acesso da API :key:
 
 **Request Address**: `https://ua8vha.deta.dev/user/`
+
 **Request Method** `POST`
+
 **Request Parameters JSON**:
 ```
 {
