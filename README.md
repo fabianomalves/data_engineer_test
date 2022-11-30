@@ -5,8 +5,8 @@ O desafio é capturar os dados que recebemos de alguns usuários e conseguir res
  
 ## Tarefas
 **Documentações da API**
-[Swagger UI](https://ua8vha.deta.dev/docs)
-[ReDoc](https://ua8vha.deta.dev/redoc)
+- [Swagger UI](https://ua8vha.deta.dev/docs)
+- [ReDoc](https://ua8vha.deta.dev/redoc)
 ### 1. Cadastrar usuário para obter token de acesso da API :key:
 
 **Request Address**: `https://ua8vha.deta.dev/user/`
