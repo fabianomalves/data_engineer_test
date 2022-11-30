@@ -93,6 +93,7 @@ Deixamos os dados no jeitinho para que eles possam ser armazenados dentro de uma
 Utilizando a service account enviada por email crie a tabela no banco de dados com a seguinte nomenclatura **bg_data_enginner_test_seuNome**
 
 **Ponto de atenção**: o BigQuery não aceita colunas com ponto ou caracter especial, precisaremos renomear as colunas que contenham alguns desses casos trocando-os por *underscore* `_`
+
 Leia sobre [Nomes de coluna BigQuery](https://cloud.google.com/bigquery/docs/schemas#column_names)
  
 **utilizando consultas SQL responda as perguntas**
