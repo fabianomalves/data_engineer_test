@@ -5,11 +5,11 @@ O desafio é capturar os dados que recebemos de alguns usuários e conseguir res
  
 ## Tarefas
 **Documentações da API**
-- [Swagger UI](https://ua8vha.deta.dev/docs)
-- [ReDoc](https://ua8vha.deta.dev/redoc)
+- [Swagger UI](https://begrowth.deta.dev/docs)
+- [ReDoc](https://begrowth.deta.dev/redoc)
 ### 1. Cadastrar usuário para obter token de acesso da API :key:
 
-**Request Address**: `https://ua8vha.deta.dev/user/`
+**Request Address**: `https://begrowth.deta.dev/user/`
 
 **Request Method** `POST`
 
@@ -23,7 +23,7 @@ O desafio é capturar os dados que recebemos de alguns usuários e conseguir res
 **Curl**
 ```
 curl -X 'POST' \
-  'https://ua8vha.deta.dev/user/' \
+  'https://begrowth.deta.dev/user/' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -44,7 +44,7 @@ Response Body:
 ```
 
 ### 2. Consumir dados de usuário da API :key:
-Substituindo `access_token` pelo token obtido na etapa anterior, podemos chamar o endpoint `https://ua8vha.deta.dev/token=access_token` que nos retorna dados de usuários em formato **JSON**
+Substituindo `access_token` pelo token obtido na etapa anterior, podemos chamar o endpoint `https://begrowth.deta.dev/token=access_token` que nos retorna dados de usuários em formato **JSON**
 
 Exemplo:
 **Saída**
