@@ -161,8 +161,8 @@ Leia sobre [Nomes de coluna BigQuery](https://cloud.google.com/bigquery/docs/sch
 * **4.6 -** O estado de acesso obtido atraves das coordenadas geograficas fica na mesma Região Fiscal que esse CPF foi registrado? (Criar flag `same_state` no select)
  
 ### 5. O que esperamos:
-* Seu projeto deve estar em um repositório **git**.
-* Crie uma documentação que explique como fez para chegar nos resultados obtidos, pode ser no **README** do git.
+* Seu projeto deve estar em um repositório **git** com o código em Python e os arquivos de *queries* que você utilizou na construção das suas análises.
+* Crie uma documentação que explique como fez para chegar nos resultados obtidos, contendo as instruções para reproduzirmos suas análises, pode ser no **README** do git.
 * Sinta-se à vontade para usar qualquer framework, bibliotecas e ferramentas que se sentir à vontade a única restrição é a linguagem de programação que deve ser **Python**
 
 ***Todos os dados de usuário são ficticios gerados para efeito de teste/estudo por plataformas como mockaroo e 4Devs**
