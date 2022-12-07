@@ -132,7 +132,7 @@ Utilizando a **service account** enviada por email crie a tabela no banco de dad
 
 **project_id =** begrowth-user-api-demo
 
-**dataset_id =** begrowth-user-api-demo.bg_users
+**dataset_id =** bg_users
 
 **table_id   =** bg_data_enginner_test_seuNome
 
