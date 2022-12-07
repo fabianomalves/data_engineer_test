@@ -131,7 +131,9 @@ Deixamos os dados no jeitinho para que eles possam ser armazenados dentro de uma
 Utilizando a **service account** enviada por email crie a tabela no banco de dados com a seguinte nomenclatura **begrowth-user-api-demo.bg_users.bg_data_enginner_test_seuNome**
 
 **project_id =** begrowth-user-api-demo
+
 **dataset_id =** begrowth-user-api-demo.bg_users
+
 **table_id   =** bg_data_enginner_test_seuNome
 
 
