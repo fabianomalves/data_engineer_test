@@ -128,7 +128,12 @@ Para ajudar o time de produto em suas análises, precisamos que os dados estejam
  
 ### 3. Inserir esse dataframe dentro de uma tabela no BigQuery
 Deixamos os dados no jeitinho para que eles possam ser armazenados dentro de uma tabela na nossa base de dados.
-Utilizando a **service account** enviada por email crie a tabela no banco de dados com a seguinte nomenclatura **bg_data_enginner_test_seuNome**
+Utilizando a **service account** enviada por email crie a tabela no banco de dados com a seguinte nomenclatura **begrowth-user-api-demo.bg_users.bg_data_enginner_test_seuNome**
+
+**project_id =** begrowth-user-api-demo
+**dataset_id =** begrowth-user-api-demo.bg_users
+**table_id   =** bg_data_enginner_test_seuNome
+
 
 **Ponto de atenção**: *o BigQuery não aceita colunas com ponto ou caracter especial, precisaremos renomear as colunas que contenham alguns desses casos trocando-os por *underscore* `_`*
 
