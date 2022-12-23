@@ -1,0 +1,11 @@
+*.csv
+*.zip
+*.db
+*.pyc
+*.vscode
+*.project
+*.dbeaver
+*.apis
+*.venv
+*.txt
+*.key
