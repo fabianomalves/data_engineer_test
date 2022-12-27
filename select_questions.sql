@@ -48,13 +48,27 @@ GROUP BY SUBSTR(utm, 4, 2)
 /*
  * O estado de acesso obtido atraves das coordenadas geograficas 
  * fica na mesma Região Fiscal que esse CPF foi registrado? 
- * (Criar flag same_state no select)
+ * (Criar flag same_state no select) 
  */
 
-SELECT 
+-- a coluna UF da tabela begrowth_user_api_demo_bg_users_brazilian_state
+-- e a coluna address_state da tabela begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano
+-- estão diferentes. Olhar uma forma de fazer um de para com elas
+
+SELECT *
+FROM begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano 
+LIMIT 10;
+
+SELECT  
+    *
+FROM begrowth_user_api_demo_bg_users_brazilian_state
+
+SELECT
+    t1.id,
+    t1.address_state,
+    t2.uf 
 FROM begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano AS t1
 LEFT JOIN begrowth_user_api_demo_bg_users_brazilian_state AS t2
-ON t1.address_state = t2.uf
-WHERE 
-
+ON t1.address_state = t2.uf 
+ 
 
