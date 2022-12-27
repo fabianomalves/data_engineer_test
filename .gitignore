@@ -6,6 +6,5 @@
 *.dbeaver
 *.apis
 *.venv
-*.txt
 *.key
 *.json
