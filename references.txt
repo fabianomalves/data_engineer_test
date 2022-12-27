@@ -1,0 +1,74 @@
+- Consumindo API:
+
+https://www.treinaweb.com.br/blog/consumindo-apis-com-python-parte-1
+https://realpython.com/api-integration-in-python/
+https://blog.networktocode.com/post/using-python-requests-with-rest-apis/
+https://www.digitalocean.com/community/tutorials/how-to-use-web-apis-in-python-3#step-1-getting-familiar-with-an-api
+https://docs.oracle.com/en/cloud/saas/marketing/eloqua-develop/Developers/GettingStarted/APIRequests/curl-requests.htm#GET
+
+
+
+- Autorização para acessar api usando token:
+
+https://reqbin.com/req/c-hlt4gkzd/curl-bearer-token-authorization-header-example
+https://stackoverflow.com/questions/3044315/how-to-set-the-authorization-header-using-curl
+https://reqbin.com/req/c-hlt4gkzd/curl-bearer-token-authorization-header-example
+
+
+
+- Converter json num pandas dataframe:
+
+https://towardsdatascience.com/how-to-convert-json-into-a-pandas-dataframe-100b2ae1e0d8
+https://stackoverflow.com/questions/42518864/convert-json-data-from-request-into-pandas-dataframe
+https://www.scrapingbee.com/blog/python-curl/
+https://www.freecodecamp.org/news/python-parse-json-how-to-read-a-json-file/
+https://www.w3schools.com/python/python_json.asp#:~:text=Parse%20JSON%20%2D%20Convert%20from%20JSON,will%20be%20a%20Python%20dictionary.
+https://www.geeksforgeeks.org/how-to-read-json-files-with-pandas/
+https://stackoverflow.com/questions/29216889/slicing-a-dictionary
+https://www.geeksforgeeks.org/python-slice-till-k-dictionary-value-lists/
+https://www.golinuxcloud.com/python-slice-dictionary/
+
+
+
+- Filtrando linhas duplicadas no pandas:
+
+https://www.statology.org/pandas-find-duplicates/
+
+
+
+- Normalizando dicionario no pandas
+
+https://towardsdatascience.com/all-pandas-json-normalize-you-should-know-for-flattening-json-13eae1dfb7dd
+
+
+
+- Criando um requeriments.txt
+
+https://stackoverflow.com/questions/31684375/automatically-create-requirements-txt
+
+
+
+- Reverse geocoding de um df pandas usando colunas de latitude e longitude e criando uma coluna address
+
+https://gis.stackexchange.com/questions/427341/reverse-geocoding-of-pandas-dataframe-with-lat-long-columns
+https://stackoverflow.com/questions/60841850/processing-results-from-geocoding-and-storing-them-in-a-pandas-column
+https://www.pauldesalvo.com/how-to-do-a-reverse-address-lookup-using-latitude-and-longitude-in-python/
+https://www.linkedin.com/pulse/extract-location-details-using-geographical-python-reverse-verma/
+https://www.appsloveworld.com/pandas/100/111/reverse-geopy-geocoding-pandas
+
+
+
+- Entenda o que é um SettingWithCopyWarning e como corrigir
+
+https://paulovasconcellos.com.br/o-que-%C3%A9-a-value-is-trying-to-be-set-on-a-copy-of-a-slice-from-a-dataframe-e85f744d8be1
+https://stackoverflow.com/questions/20625582/how-to-deal-with-settingwithcopywarning-in-pandas
+https://www.dataquest.io/blog/settingwithcopywarning/
+https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+https://www.analyticsvidhya.com/blog/2021/11/3-ways-to-deal-with-settingwithcopywarning-in-pandas/
+
+
+
+- Criptografar e descriptografar arquivos usando python
+
+https://acervolima.com/criptografar-e-descriptografar-arquivos-usando-python/
+https://www.geeksforgeeks.org/fernet-symmetric-encryption-using-cryptography-module-in-python/
