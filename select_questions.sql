@@ -30,12 +30,13 @@ HAVING COUNT(DISTINCT ID) <= '1';
  * ordando por ordem alfabética?
  */
 
-SELECT
-  SUBSTR(utm, 4, 2) as utm_source,
-  COUNT(DISTINCT id) as num_users
-FROM begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano 
-WHERE SUBSTR(utm, 4, 2) IN ('gg', 'fb', 'wp')
-GROUP BY SUBSTR(utm, 4, 2)
+
+SELECT 
+    SUBSTR(utm, 4, 3) AS utm_source, 
+    COUNT(*) AS users
+FROM begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano
+GROUP BY utm_source
+ORDER BY utm_source ASC;
 
 
 
@@ -43,6 +44,13 @@ GROUP BY SUBSTR(utm, 4, 2)
 /* Quantos usuários únicos temos por source 
  * ordando por ordem alfabética?
  */
+
+SELECT 
+    SUBSTR(utm, 4, 3) AS utm_source, 
+    COUNT(DISTINCT id) AS unique_users
+FROM begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano 
+GROUP BY utm_source
+ORDER BY utm_source ASC;
 
 
 /*
