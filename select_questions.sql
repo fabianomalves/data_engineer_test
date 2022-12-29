@@ -1,18 +1,21 @@
-SELECT *
-FROM begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano 
-LIMIT 10;
-
 /* Quantos usuários temos por estado de acesso 
  * ordenando pelo estado com maior número 
  * (coluna address_state)?
  */
+
 SELECT 
-    COUNT(DISTINCT ID) AS count_by_state,
-    address_state AS state
-FROM begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano 
-GROUP BY address_state 
-ORDER BY COUNT(DISTINCT ID) DESC;
+    COUNT(DISTINCT t1.id) AS users_by_state,
+    t1.address_state AS state
+FROM
+    begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano AS t1
+GROUP BY
+    t1.address_state
+ORDER BY
+    COUNT(DISTINCT ID) DESC;
+
 -----------------------------
+
+
 
 /*
  * Quantos usuários únicos temos por estado
@@ -21,24 +24,34 @@ ORDER BY COUNT(DISTINCT ID) DESC;
 */
 
 SELECT 
-    COUNT(DISTINCT id) AS count_by_state,
-    address_state AS state
-FROM begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano 
-GROUP BY address_state 
-HAVING COUNT(DISTINCT ID) <= '1';
+    COUNT(DISTINCT t1.id) AS unique_users_by_state,
+    t1.address_state AS state
+FROM
+    begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano AS t1
+GROUP BY
+    t1.address_state
+HAVING
+    COUNT(DISTINCT t1.id) = '1';
 -----------------------------
+
+-----------------------------
+
 
 /* Quantos usuários temos por source 
  * ordando por ordem alfabética?
  */
 
-
-SELECT 
-    SUBSTR(utm, 4, 3) AS utm_source, 
-    COUNT(*) AS users
-FROM begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano
-GROUP BY utm_source
-ORDER BY utm_source ASC;
+SELECT
+    COUNT(t1.*) AS users,
+    SUBSTR(
+        t1.utm, 4, 3
+    ) AS utm_source
+FROM
+    begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano AS t1 
+GROUP BY
+    utm_source
+ORDER BY
+    utm_source ASC;
 -----------------------------
 
 
@@ -48,11 +61,16 @@ ORDER BY utm_source ASC;
  */
 
 SELECT 
-    SUBSTR(utm, 4, 3) AS utm_source, 
-    COUNT(DISTINCT id) AS unique_users
-FROM begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano 
-GROUP BY utm_source
-ORDER BY utm_source ASC;
+    COUNT(DISTINCT t1.id) AS unique_users,
+    SUBSTR(
+        t1.utm, 4, 3
+    ) AS utm_source
+FROM
+    begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano AS t1
+GROUP BY
+    utm_source
+ORDER BY
+    utm_source ASC;
 -----------------------------
 
 
@@ -63,25 +81,10 @@ ORDER BY utm_source ASC;
  * (Criar flag same_state no select) 
  */
 
-
 SELECT 
-    t1.cpf AS cpf_user,
-    t1.address_state AS adress_state_user_acronym,
-    t2.initials AS brazilian_state_acronym,
-    t3.id AS cpf_state_ids,
-    t3.uf AS region_state_cpf 
-FROM begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano AS t1
-LEFT JOIN begrowth_user_api_demo_bg_users_brazilian_state AS t2
-ON t1.address_state = t2.initials 
-LEFT JOIN begrowth_user_api_demo_bg_users_cpf_state AS t3
-ON SUBSTRING(t1.cpf, 9, 1) = CAST (t3.id AS TEXT)  
------------------------------
-
-
-SELECT 
-    t1.cpf AS cpf_user,
-    t1.address_state AS adress_state_user_acronym,
-    t2.initials AS brazilian_state_acronym,
+    t1.id AS id_user,
+    LPAD(t1.cpf, 11, '0') AS cpf_user,
+    t1.address_state AS adress_state_user,
     t3.id AS cpf_state_ids,
     t3.uf AS region_state_cpf,
     COALESCE(
@@ -89,18 +92,21 @@ SELECT
             SELECT 'same_state'
             FROM (
                 SELECT 
-                    t1.cpf AS cpf_user,
-                    t1.address_state AS adress_state_user_acronym,
-                    t2.initials AS brazilian_state_acronym,
+                    t1.id AS id_user,
+                    LPAD(t1.cpf, 11, '0') AS cpf_user,
+                    t1.address_state AS adress_state_user,
                     t3.id AS cpf_state_ids,
                     t3.uf AS region_state_cpf 
                 FROM begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano AS t1
                 LEFT JOIN begrowth_user_api_demo_bg_users_brazilian_state AS t2
                 ON t1.address_state = t2.initials 
                 LEFT JOIN begrowth_user_api_demo_bg_users_cpf_state AS t3
-                ON SUBSTRING(t1.cpf, 9, 1) = CAST (t3.id AS TEXT)
+                ON SUBSTRING(LPAD(t1.cpf, 11, '0'), 9, 1) = CAST (t3.id AS TEXT)
             ) AS subquery
-            WHERE region_state_cpf = t2.initials
+            WHERE t1.address_state 
+            IN (
+                SELECT regexp_split_to_table(t3.uf, ', ')
+)
             LIMIT 1
         ), 'different_state'
     ) AS same_state
@@ -108,25 +114,25 @@ FROM begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano AS t1
 LEFT JOIN begrowth_user_api_demo_bg_users_brazilian_state AS t2
 ON t1.address_state = t2.initials 
 LEFT JOIN begrowth_user_api_demo_bg_users_cpf_state AS t3
-ON SUBSTRING(t1.cpf, 9, 1) = CAST (t3.id AS TEXT);
-
-
+ON SUBSTRING(LPAD(t1.cpf, 11, '0'), 9, 1) = CAST (t3.id AS TEXT)
+ORDER BY same_state DESC;
 -----------------------------
 
 
+
 SELECT *
-FROM begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano 
+FROM begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano AS t1
 LIMIT 10;
 -----------------------------
 
 SELECT  
     *
-FROM begrowth_user_api_demo_bg_users_brazilian_state
+FROM begrowth_user_api_demo_bg_users_brazilian_state AS t2
 -----------------------------
 
 SELECT  
     *
-FROM begrowth_user_api_demo_bg_users_cpf_state
+FROM begrowth_user_api_demo_bg_users_cpf_state AS t3
 -----------------------------
 
 
