@@ -548,6 +548,17 @@ begrowth_user_api_demo_bg_users_bg_data_enginner_test_fabiano,
 begrowth_user_api_demo_bg_users_brazilian_state,
 begrowth_user_api_demo_bg_users_cpf_state.
 
+O arquivo com os comandos SQL está em :
+    
+    ./sql/selects_questions.sql
+
+Os dados em csv que foram gerados pelo script Python e foram
+utilizados nas queries, estão dentro da pasta:
+
+    ./data/begrowth_user_api_demo_bg_users_brazilian_state.csv
+    ./data/begrowth_user_api_demo_bg_users_cpf_state.csv
+    ./data/bg_data_enginner_test_fabiano.csv
+
 ### Selects:
 
 1 - Quantos usuários temos por estado de acesso ordenando pelo estado com 
