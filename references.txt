@@ -72,3 +72,7 @@ https://www.analyticsvidhya.com/blog/2021/11/3-ways-to-deal-with-settingwithcopy
 
 https://acervolima.com/criptografar-e-descriptografar-arquivos-usando-python/
 https://www.geeksforgeeks.org/fernet-symmetric-encryption-using-cryptography-module-in-python/
+
+- Utilizando o Chat GPT-3 da OpenAI para ajudar na criação scripts Python e queries SQL
+https://chat.openai.com/chat
+
